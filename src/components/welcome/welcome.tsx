@@ -78,16 +78,19 @@ const Welcome = ({
 
         </div>
       </div>
-      <div className={styles.image_container}>
-        <Image
-          className={styles.image}
-          src={`http:${bg}`}
-          layout='fill'
-          placeholder='blur'
-          blurDataURL={`http:${bg}`}
-          alt={'welcome image'}
-        />
-        <div className={styles.overlay} />
+      <div className={styles.wrapperImage}>
+        <div className={styles.image_container}>
+          <Image
+            className={styles.image}
+            src={`http:${bg}`}
+            layout='fill'
+            placeholder='blur'
+            sizes='(min-width: 812px)'
+            blurDataURL={`http:${bg}`}
+            alt={'welcome image'}
+          />
+          <div className={styles.overlay} />
+        </div>
       </div>
     </div>
 
