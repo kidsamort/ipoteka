@@ -6,19 +6,35 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/contentfuls/types/contentful.d.ts",
+    "stylelint": "npx stylelint \"**/*.css\" --fix",
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "classnames": "^2.3.1",
+    "contentful": "^9.1.34",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-multi-carousel": "^2.8.2",
+    "react-yandex-maps": "^4.6.0"
   },
   "devDependencies": {
     "@types/node": "18.7.6",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "contentful-management": "^10.12.0",
+    "contentful-typescript-codegen": "^3.2.3",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.10.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^27.0.0",
+    "stylelint-order": "^5.0.0",
     "typescript": "4.7.4"
   }
 }

@@ -1,0 +1,132 @@
+.logoWrapper {
+    padding: 32px 0;
+}
+
+.logo {
+    width: 115px;
+    height: 50px;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    font-style: normal;
+    line-height: 24px;
+
+    background: var(--redAlizarin);
+}
+
+.wrapper {
+    display: grid;
+    overflow: hidden;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.image_container {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image {
+    filter: brightness(70%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.6;
+}
+
+
+
+.text {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 22px;
+}
+
+.wrapper h1 {
+    letter-spacing: -0.01em;
+
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 59px;
+
+    color: var(--redAlizarin);
+
+}
+
+.wrapper h2 {
+    letter-spacing: -0.01em;
+
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.content {
+    align-self: center;
+}
+
+.contentWrapper {
+    display: grid;
+    gap: 54px;
+}
+
+.headingWrapper {
+    display: grid;
+    gap: 18px;
+}
+
+.contactsWrapper {
+    display: grid;
+    gap: 27px;
+}
+
+.contacts {
+    display: grid;
+    gap: 15px;
+}
+
+.contacts li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+
+    align-items: center;
+}
+
+.contactsIcon{
+    display: grid;
+    gap: 12px;
+    grid-auto-flow: column;
+}
+
+.whatsapp{
+    max-width: 32px;
+}
+
+.buttonWrapper {
+    padding: 32px 0;
+
+}
+
+.contactNumber{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+}

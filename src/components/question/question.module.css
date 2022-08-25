@@ -1,0 +1,34 @@
+.questionInputWrapper {
+    display: grid;
+    gap: 24px;
+}
+
+.questionInput {
+    padding: 24px 15px;
+    border: 1px solid #E6E8EC;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.questionInput::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.01em;
+    color: #595959;
+}
+.confirm{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 10px;
+}
+.confirmText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.01em;
+
+    color: #595959;
+}

@@ -1,0 +1,153 @@
+/* Colors */
+:root {
+    /* Dark theme / Grayscale */
+    --black: black;
+    --b11: #000;
+    --b10: #0F0F13;
+    --b9: #1E1E24;
+    --b8: #2C2C35;
+    --b7: #40404A;
+    --b6: #5B5B65;
+    --b5: #70707C;
+    --b4: #8A8A98;
+    --b3: #A9A9B7;
+    --b2: #D0D0DA;
+    --b1: #F5F5FF;
+    --b0: #FCFCFC;
+
+    /* White theme / Grayscale */
+    --w11: #07070C;
+    --w10: #16161E;
+    --w9: #262631;
+    --w8: #2E2E3A;
+    --w7: #535362;
+    --w6: #656575;
+    --w5: #7E7E8F;
+    --w4: #9A9AAF;
+    --w3: #C6CBD9;
+    --w2: #E2E2EA;
+    --w1: #F2F3F7;
+    --w0: #FFF;
+    --white: white;
+
+    /* Accents */
+    --grayThistle: #C2B7CD;
+    --blueSkies: #06D7F6;
+    --blueAzure: #0062FF;
+    --bluePersian: #4807EA;
+    --pinkStrawberries: #FF5CAA;
+    --purpleAmethyst: #A162F7;
+    --purpleMagenta: #E80FE9;
+    --redAlizarin: #FF2A3C;
+    --redStrawberry: #DB3031;
+    --greenSea: #15FFAB;
+    --greenAquamarine: #3DD598;
+    --greenSpring: #62F783;
+    --greenVerdepom: #24CA49;
+    --yellowZinc: #FFF736;
+    --orangeShiny: #FFB443;
+    --orangeMango: #FF8743;
+    --orangeSpunky: #FF7A2F;
+    --orangeAmber: #FE7E07;
+}
+
+/* Headers */
+.h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+.h2 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 39px;
+}
+
+.h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+.h4 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 34px;
+}
+
+.h5 {
+    letter-spacing: -0.009em;
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.h6 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.h7 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.textBold {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.subtitle {
+    letter-spacing: -0.009em;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.subtitleSemiBold {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.button {
+    letter-spacing: -0.009em;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.miniButton {
+    letter-spacing: -0.009em;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.description {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.miniDescription {
+    letter-spacing: 0.05em;
+
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 11px;
+}

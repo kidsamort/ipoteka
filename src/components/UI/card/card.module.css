@@ -1,0 +1,47 @@
+.wrapper {
+    border-radius: 12px;
+    padding: 24px 14px;
+    background: #F4F5F6;
+    display: grid;
+    gap: 12px;
+}
+
+.image {
+    border-radius: 12px;
+}
+
+.title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #23262F;
+}
+
+.subtitle {
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+
+    color: #7F8793;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+
+    color: #7F8793;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.01em;
+    color: #FF2A3C;
+}

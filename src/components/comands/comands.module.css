@@ -1,0 +1,7 @@
+.wrapper {
+    display: block;
+}
+.cardsWrapper {
+    display: grid;
+    gap: 28px;
+}

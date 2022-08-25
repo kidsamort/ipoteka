@@ -1,0 +1,21 @@
+.wrapper {
+    margin: 40px 0;
+
+}
+.wrapperBank {
+    display: grid;
+    gap: 46px;
+    margin-bottom: 50px;
+}
+
+
+.bank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 227px;
+    height: 111px;
+    margin-right: 50px;
+    background: #F4F5F6;
+    border-radius: 6px;
+}
