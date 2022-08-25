@@ -3,6 +3,7 @@ import { PartnerProps } from 'components/partner/partner.props'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import Image from 'next/image'
+import Title from 'components/UI/title'
 
 const responsive = {
   desktop: {
@@ -26,9 +27,9 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
   return (
     <div className='container'>
       <div className={styles.wrapper}>
+        <Title size={'md'}>Банки партнеры</Title>
         <Carousel responsive={responsive} showDots={true} ssr
                   partialVisible
-
         >
           <div className={styles.wrapperBank}>
             {data.map((item, index) => {
