@@ -17,7 +17,7 @@ const responsive = {
     partialVisibilityGutter: 50,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 627, min: 0 },
     items: 1,
     partialVisibilityGutter: 70,
   },
@@ -35,12 +35,11 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
             {data.map((item, index) => {
               return (
                 index <= 2 && (
-                  <div key={index} className={styles.bank}><Image
-                    src={`http:${item.fields.logo?.fields.file.url}`}
-                    width={item.fields.logo?.fields.file.details.image?.width}
-                    height={item.fields.logo?.fields.file.details.image?.height}
-                    layout='fixed'
-                    alt={item.fields.name} />
+                  <div key={index} className={styles.bank}>
+                    <img
+                      height={index === 2 ? '20px' : '40px'}
+                      src={`http:${item.fields.logo?.fields.file.url}`}
+                      alt={item.fields.name} />
                   </div>
                 )
               )
@@ -50,11 +49,14 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
             {data.length > 2 && data.map((item, index) => {
               return (
                 index > 2 && index <= 5 && (
-                  <div key={index} className={styles.bank}><Image
-                    src={`http:${item.fields.logo?.fields.file.url}`}
-                    width={item.fields.logo?.fields.file.details.image?.width}
-                    height={item.fields.logo?.fields.file.details.image?.height}
-                    alt={item.fields.name} />
+                  <div key={index} className={styles.bank}>
+                    <div className={styles.imageBlock}>
+                      <img
+                        className={styles.image}
+                        height={index === 3 ? '30px' : '40px'}
+                        src={`http:${item.fields.logo?.fields.file.url}`}
+                        alt={item.fields.name} />
+                    </div>
                   </div>
                 )
               )
@@ -64,10 +66,10 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
             {data.length > 5 && data.map((item, index) => {
               return (
                 index > 5 && index <= 8 && (
-                  <div key={index} className={styles.bank}><Image
+                  <div key={index} className={styles.bank}><img
+                    height={index === 6 ? '40px' : '30px'}
+
                     src={`http:${item.fields.logo?.fields.file.url}`}
-                    width={item.fields.logo?.fields.file.details.image?.width}
-                    height={item.fields.logo?.fields.file.details.image?.height}
                     alt={item.fields.name} />
                   </div>
                 )

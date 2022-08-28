@@ -133,7 +133,10 @@
 
 @media (min-width: 502px) {
     .wrapper {
-        padding: 60px 0;
+        /*padding: 60px 0;*/
+    }
+    .buttonWrapper {
+        margin-bottom: 100px;
     }
     /*.headingText{*/
     /*    font-weight: 800;*/

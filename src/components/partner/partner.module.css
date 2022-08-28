@@ -13,9 +13,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 227px;
-    height: 111px;
+    height: 80px;
     margin-right: 50px;
     background: #F4F5F6;
     border-radius: 6px;
+
+}
+.imageBlock {
+
+}
+.image{
+    /*width: 100%;*/
+    /*height: 40px;*/
 }

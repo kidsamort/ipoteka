@@ -6,7 +6,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 
 const Problems = ({ data, heading }: ProblemsProps): JSX.Element => {
-  console.log(data)
   return (
     <div className={styles.wrapper}>
       <div className='container'>

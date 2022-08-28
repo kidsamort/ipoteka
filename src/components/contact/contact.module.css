@@ -1,5 +1,21 @@
 .wrapper {
+    margin: 40px 0;
+}
+.contactsWrapper {
     display: grid;
     gap: 30px;
-    margin: 40px 0;
+
+}
+@media (min-width: 425px) {
+    .contactsWrapper {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        /*grid-auto-columns: minmax(380px, 380px);*/
+    }
+}
+
+@media (min-width: 1400px) {
+    .contactsWrapper {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        /*grid-auto-columns: minmax(380px, 380px);*/
+    }
 }

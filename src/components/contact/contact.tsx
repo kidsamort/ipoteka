@@ -10,11 +10,13 @@ const Contact = ({ tel, mail, loc }: EmptyProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <Title size={'md'}>Контакты</Title>
-      <CardsContact title={'Телефоны'} contact={tel} />
-      <CardsContact title={'Email Адрес'}
-                    contact={mail} />
-      <CardsContact title={'Адрес офиса'}
-                    contact={loc} />
+      <div className={styles.contactsWrapper}>
+        <CardsContact title={'Телефоны'} contact={tel} />
+        <CardsContact title={'Email Адрес'}
+                      contact={mail} />
+        <CardsContact title={'Адрес офиса'}
+                      contact={loc} />
+      </div>
     </div>
   )
 }

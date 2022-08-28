@@ -6,6 +6,8 @@
     padding: 66px 33px;
     background: #F4F5F6;
     border-radius: 12px;
+    max-width: 380px;
+    margin: 0 auto;
 }
 
 .icon {

@@ -11,15 +11,15 @@ body {
 }
 
 .container {
-    /*max-width: 375px;*/
     margin: 0 auto;
     padding: 0 32px;
 }
-@media (max-width: 425px) {
+
+
+@media (min-width: 712px) {
     .container {
-        max-width: 425px;
-        margin: 0 auto;
-        padding: 0 32px;
+
+        padding: 0 60px;
     }
 }
 /*@media (prefers-color-scheme: dark) {*/

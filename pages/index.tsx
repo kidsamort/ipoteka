@@ -26,6 +26,7 @@ import {
 import { loadContacts } from 'contentfuls/lib/footer'
 import { useEffect, useState } from 'react'
 import Comands from 'components/comands/comands'
+import Head from 'next/head'
 
 interface HomeProps {
   mapLoc: IMap,
@@ -74,9 +75,11 @@ const Home = ({
 
 
   }, [])
-  console.log('phones', phones)
   return (
     <>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      </Head>
       <Welcome title={home.fields.title!} subtitle={home.fields.subtitle!}
                info={home.fields.info!} action={home.fields.action!}
                bg={home.fields.background!.fields.file.url}
