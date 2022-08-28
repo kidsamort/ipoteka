@@ -3,7 +3,7 @@ import { QuestionProps } from 'components/question/question.props'
 import Title from 'components/UI/title'
 import Button from 'components/UI/button'
 
-const Question = ({title}: QuestionProps): JSX.Element => {
+const Question = ({ title }: QuestionProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <div className='container'>
@@ -11,9 +11,10 @@ const Question = ({title}: QuestionProps): JSX.Element => {
       </div>
       <div className='container'>
         <form className={styles.questionInputWrapper} action=''>
-        <textarea className={styles.questionInput} style={{ height: '127px' }}
-                  placeholder={'Ваш вопрос или комментарий'}
-                  name='text'></textarea>
+          <img className={styles.image}  src='/female.png' alt='девушка думает' />
+          <textarea className={styles.questionInput} style={{ height: '127px' }}
+                    placeholder={'Ваш вопрос или комментарий'}
+                    name='text'></textarea>
           <input className={styles.questionInput} type='name'
                  placeholder={'Имя*'} />
           <input className={styles.questionInput} type='tel'

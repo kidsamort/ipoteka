@@ -32,3 +32,25 @@
 
     color: #595959;
 }
+.image{
+    display: none;
+}
+@media (min-width: 768px) {
+    .image{
+        height: 463px;
+        display: block;
+        grid-row: 1/-6;
+        grid-column: 1/2;
+        object-fit: cover;
+        border-radius: 12px;
+
+    }
+    .questionInputWrapper {
+        grid-template-columns: auto 1fr ;
+    }
+}
+@media (min-width: 1024px) {
+    .image{
+        width: 100%;
+    }
+}
