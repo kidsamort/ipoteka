@@ -13,16 +13,16 @@ const Problems = ({ data, heading }: ProblemsProps): JSX.Element => {
         <Title size={'md'}>{heading}</Title>
       </div>
       <div className='container'>
-        {data.map((item, index) => {
-          return (
-            <div key={index} className={styles.cardsWrapper}>
-              <Card title={item.fields.title!}
+        <div className={styles.cardsWrapper}>
+          {data.map((item, index) => {
+            return (
+              <Card key={index} title={item.fields.title!}
                     image={`http:${item.fields.image?.fields.file.url}`}>
                 {documentToReactComponents(item.fields.text!)}
               </Card>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
 
       </div>
     </div>

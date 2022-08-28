@@ -6,10 +6,15 @@
     gap: 12px;
 }
 
-.image {
-    border-radius: 12px;
+
+.imageContainer{
 }
 
+.imageD {
+    width: 100%;
+    border-radius: 12px;
+
+}
 .title {
     text-align: center;
     font-weight: 700;
@@ -44,4 +49,11 @@
     line-height: 19px;
     letter-spacing: -0.01em;
     color: #FF2A3C;
+}
+@media (min-width: 425px) {
+    .wrapper{
+        /*max-width: 380px;*/
+
+    }
+
 }

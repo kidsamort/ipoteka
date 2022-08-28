@@ -5,7 +5,11 @@ import Image from 'next/image'
 const Card = ({ title, subtitle, children, image }: CardProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
-      <Image className={styles.image} src={image} alt={'обложка'} width={274} height={196} />
+      <div className={styles.imageContainer}>
+        {/*<Image className={styles.image} src={image} alt={'обложка'}*/}
+        {/*       layout={'fill'} />*/}
+        <img className={styles.imageD} src={image} alt={'обложка'} />
+      </div>
       <h3 className={styles.title}>{title}</h3>
       {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
 

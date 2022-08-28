@@ -130,3 +130,15 @@
     font-size: 20px;
     line-height: 27px;
 }
+
+@media (min-width: 502px) {
+    .wrapper {
+        padding: 60px 0;
+    }
+    /*.headingText{*/
+    /*    font-weight: 800;*/
+    /*    font-size: 96px;*/
+    /*    line-height: 116px;*/
+    /*    letter-spacing: -0.01em;*/
+    /*}*/
+}
