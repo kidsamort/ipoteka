@@ -8,15 +8,16 @@ const CardsContact = ({
                         contact,
                         icon,
                       }: CardsContactProps): JSX.Element => {
+  const Icon = icon
   return (
     <div className={styles.wrapper}>
-      <div className={styles.icon}>{icon}</div>
-        <p className={styles.title}>{title}</p>
-        <ul>
-          {contact.map((item, index) => {
-            return <li key={index}>{item}</li>
-          })}
-        </ul>
+      <Icon className={styles.icon} />
+      <p className={styles.title}>{title}</p>
+      <ul>
+        {contact.map((item, index) => {
+          return <li key={index}>{item}</li>
+        })}
+      </ul>
     </div>
   )
 }

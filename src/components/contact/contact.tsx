@@ -2,6 +2,10 @@ import { EmptyProps } from 'components/empty/empty.props'
 import styles from 'components/contact/contact.module.css'
 import CardsContact from 'components/UI/cardsContact'
 import Title from 'components/UI/title'
+import {
+  AiFillPhone, FaMapMarkedAlt,
+  MdEmail,
+} from 'react-icons/all'
 
 
 const Contact = ({ tel, mail, loc }: EmptyProps): JSX.Element => {
@@ -11,10 +15,10 @@ const Contact = ({ tel, mail, loc }: EmptyProps): JSX.Element => {
     <div className={styles.wrapper}>
       <Title size={'md'}>Контакты</Title>
       <div className={styles.contactsWrapper}>
-        <CardsContact title={'Телефоны'} contact={tel} />
-        <CardsContact title={'Email Адрес'}
+        <CardsContact icon={AiFillPhone} title={'Телефоны'} contact={tel} />
+        <CardsContact icon={MdEmail} title={'Email Адрес'}
                       contact={mail} />
-        <CardsContact title={'Адрес офиса'}
+        <CardsContact icon={FaMapMarkedAlt} title={'Адрес офиса'}
                       contact={loc} />
       </div>
     </div>

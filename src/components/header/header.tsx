@@ -6,6 +6,7 @@ import OutsideClickHandler from 'react-outside-click-handler'
 import Image from 'next/image'
 import { HeaderProps } from 'components/header/header.props'
 import Link from 'next/link'
+import { GiHamburgerMenu, GrClose } from 'react-icons/all'
 
 
 const white = '#fcfcfd'
@@ -85,7 +86,7 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
             {links.map((item, index) => (
               <Link key={index} href={item.href}>
                 <a onClick={() => item.href}
-                   style={{ color: navbar ? (router.asPath == ('/' + item.href) ? 'red' : 'gray') : (router.asPath == ('/' + item.href) ? 'red' : 'white') }}
+                   style={{ color: navbar ? (router.asPath == ('/' + item.href) ? 'red' : 'gray') : (router.asPath == ('/' + item.href) ? 'red' : 'gray') }}
                    className={cn(
                      'button-small',
                    )}
@@ -99,7 +100,7 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
               className={cn('button-svg', styles.close_button)}
               onClick={closeMenu}
             >
-              {/*<Icon name='close' />*/}
+              <GrClose style={{width: '20px', height: '20px'}}/>
             </button>
 
 
@@ -155,7 +156,7 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
           className={cn('button-svg', styles.open_button)}
           onClick={openMenu}
         >
-          {/*<Icon name="menu"/>*/}
+          <GiHamburgerMenu style={{width: '20px', height: '20px'}}/>
         </button>
       </div>
     </header>
