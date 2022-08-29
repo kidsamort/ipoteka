@@ -16,7 +16,7 @@ const links = [
   { name: 'Контакты', href: '#hash-section-4' },
 ]
 
-const Header = ({ refs, nav, tel }: HeaderProps): JSX.Element => {
+const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
   const router = useRouter()
   const [menu, setMenu] = useState(false)
   const [navbar, setNavbar] = useState(false)

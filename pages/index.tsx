@@ -76,9 +76,6 @@ const Home = ({
     setContact(con)
   }, [])
 
-  // @ts-ignore
-  const executeScroll = (ref: MutableRefObject<null>) => ref.current.scrollIntoView()
-
   return (
     <>
       <Head>
