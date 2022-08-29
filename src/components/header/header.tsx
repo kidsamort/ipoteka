@@ -84,7 +84,7 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
             {links.map((item, index) => (
               <Link key={index} href={item.href}>
                 <a
-                  style={{ color: navbar ? (router.pathname == item.href ? 'red' : 'gray') : (router.pathname == item.href ? 'red' : 'white') }}
+                  style={{ color: navbar ? (router.pathname == item.href ? 'red' : 'gray') : (router.pathname == item.href ? 'red' : 'gray') }}
                   className={cn(
                     'button-small',
                     router.pathname == item.href
@@ -110,11 +110,12 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
             {/*</button>*/}
           </div>
         </OutsideClickHandler>
-        {!navbar && <div style={{width: '300px'}}>
-          <a href={`tel:`}
+        {!navbar && <div className={styles.jobTime}>
+          <a href={`tel:${tel[0]}`}
              style={{ color: navbar ? 'black' : 'white' }}
              className={styles.contactNumber}>
-            Работаем: с <span style={{color: 'red'}}>9:00</span> до <span style={{color: 'red'}}>23:00</span>
+            Работаем: с <span style={{ color: 'red' }}>9:00</span> до <span
+            style={{ color: 'red' }}>23:00</span>
           </a>
         </div>}
         <ul style={{ display: navbar ? 'grid' : 'none' }}
@@ -136,7 +137,7 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
                       height={32} alt={'Ватсап'} />
                   </a>
                 </div>
-                <a href={`tel:+7${tel}`}
+                <a href={`tel:+7${item}`}
                    style={{ color: navbar ? 'black' : 'white' }}
                    className={styles.contactNumber}>
                   {item.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`)}
