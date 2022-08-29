@@ -2,10 +2,9 @@ import { EmptyProps } from 'components/empty/empty.props'
 import styles from 'components/contact/contact.module.css'
 import CardsContact from 'components/UI/cardsContact'
 import Title from 'components/UI/title'
-import {
-  AiFillPhone, FaMapMarkedAlt,
-  MdEmail,
-} from 'react-icons/all'
+import {AiFillPhone,} from 'react-icons/ai'
+import {FaMapMarkedAlt} from 'react-icons/fa'
+import {MdEmail} from 'react-icons/md'
 
 
 const Contact = ({ tel, mail, loc }: EmptyProps): JSX.Element => {

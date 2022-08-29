@@ -24,7 +24,7 @@ import {
   IPartner, IReview, IService, IServices, IServicesCard,
 } from 'contentfuls/types/contentful'
 import { loadContacts } from 'contentfuls/lib/footer'
-import { MutableRefObject, useEffect, useRef, useState } from 'react'
+import {  useEffect,  useState } from 'react'
 import Comands from 'components/comands/comands'
 import Head from 'next/head'
 import Header from 'components/header'
@@ -96,7 +96,6 @@ const Home = ({
                  bg={home.fields.background!.fields.file.url}
                  tel={phones} buttons={buttons} nav={navigation} />
       </div>
-
       <Problems data={servicesCards} heading={services.fields.heading!} />
       <Question title={`Есть вопросы? \nНапишите нам!`} />
       <Partner data={banks} />
