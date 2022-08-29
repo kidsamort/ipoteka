@@ -1,13 +1,12 @@
 import styles from './card.module.css'
 import { CardProps } from './card.props'
-import Image from 'next/image'
 
 const Card = ({ title, subtitle, children, image }: CardProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.imageContainer}>
-        {/*<Image className={styles.image} src={image} alt={'обложка'}*/}
-        {/*       layout={'fill'} />*/}
+
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className={styles.imageD} src={image} alt={'обложка'} />
       </div>
       <h3 className={styles.title}>{title}</h3>

@@ -110,7 +110,9 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
             {/*</button>*/}
           </div>
         </OutsideClickHandler>
-        <ul className={styles.contacts}>
+        {!navbar && <div style={{width: '300px'}}></div>}
+        <ul style={{ display: navbar ? 'grid' : 'none' }}
+            className={styles.contacts}>
           {tel.map((item, index) => {
             return (
               <li key={index}>
@@ -128,7 +130,8 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
                       height={32} alt={'Ватсап'} />
                   </a>
                 </div>
-                <a href={`tel:+7${tel}`} style={{ color: navbar ? 'black' : 'white', }}
+                <a href={`tel:+7${tel}`}
+                   style={{ color: navbar ? 'black' : 'white' }}
                    className={styles.contactNumber}>
                   {item.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`)}
                 </a>

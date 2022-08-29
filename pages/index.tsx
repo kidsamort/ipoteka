@@ -80,7 +80,7 @@ const Home = ({
     <>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <script type='text/javascript' src={'/replan.js'} />
+        <script type='text/javascript' src={'/replan.js'} async/>
       </Head>
       <Header nav={navigation} tel={phones}/>
       <Welcome title={home.fields.title!} subtitle={home.fields.subtitle!}
