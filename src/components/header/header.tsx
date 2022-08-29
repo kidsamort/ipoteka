@@ -111,7 +111,7 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
           </div>
         </OutsideClickHandler>
         {!navbar && <div style={{width: '300px'}}>
-          <a href={`tel:+7${tel}`}
+          <a href={`tel:`}
              style={{ color: navbar ? 'black' : 'white' }}
              className={styles.contactNumber}>
             Работаем: с <span style={{color: 'red'}}>9:00</span> до <span style={{color: 'red'}}>23:00</span>
