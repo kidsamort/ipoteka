@@ -101,7 +101,6 @@ const Home = ({
         <Contact tel={contact} mail={mails} loc={location} />
       </div>
       <Maps loc={mapLoc.fields.once?.split(',')!} />
-
     </>
   )
 }
