@@ -66,7 +66,7 @@ const Footer = ({}: FooterProps): JSX.Element => {
           </div>
 
           <div>
-            <p
+            <p style={{color: 'black'}}
               className={cn('body-2-bold')}>{dataFooter && dataFooter.action}</p>
             <div className={styles.newsletter}>
               <input

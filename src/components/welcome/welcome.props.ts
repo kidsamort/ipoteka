@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, LegacyRef, ReactNode } from 'react'
 import { Document } from "@contentful/rich-text-types";
 import { IContacts, IHomeButton, INav } from 'contentfuls/types/contentful'
 
@@ -17,4 +17,5 @@ export interface WelcomeProps extends ComponentPropsWithoutRef<'div'> {
   buttons: IHomeButton[];
   nav: INav;
   children?: ReactNode;
+  ref: LegacyRef<HTMLDivElement> | undefined
 }

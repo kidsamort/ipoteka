@@ -24,7 +24,7 @@ import {
   IPartner, IService, IServices, IServicesCard,
 } from 'contentfuls/types/contentful'
 import { loadContacts } from 'contentfuls/lib/footer'
-import { useEffect, useState } from 'react'
+import { MutableRefObject, useEffect, useRef, useState } from 'react'
 import Comands from 'components/comands/comands'
 import Head from 'next/head'
 import Header from 'components/header'
@@ -74,34 +74,62 @@ const Home = ({
     const con: string[] = []
     contacts.map(data => data.fields.slug === 'telefon' && con.push(data.fields.description!.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`)))
     setContact(con)
-
-
   }, [])
+
+  const homeRef = useRef(null)
+  const serviceRef = useRef(null)
+  const comandRef = useRef(null)
+  const contactRef = useRef(null)
+
+  // @ts-ignore
+  const executeScroll = (ref: MutableRefObject<null>) => ref.current.scrollIntoView()
+
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <script type='text/javascript' src={'/replan.js'} async/>
+        <meta name='viewport'
+              content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+        <script type='text/javascript' src={'/replan.js'} async />
       </Head>
-      <Header nav={navigation} tel={phones}/>
-      <Welcome title={home.fields.title!} subtitle={home.fields.subtitle!}
-               info={home.fields.info!} action={home.fields.action!}
-               bg={home.fields.background!.fields.file.url}
-               tel={phones} buttons={buttons} nav={navigation} />
+
+      <Header refs={[homeRef, serviceRef, comandRef, contactRef]}
+              nav={navigation} tel={phones} />
+
+      <div id='hash-section-1'>
+        <Welcome ref={homeRef} title={home.fields.title!}
+                 subtitle={home.fields.subtitle!}
+                 info={home.fields.info!} action={home.fields.action!}
+                 bg={home.fields.background!.fields.file.url}
+                 tel={phones} buttons={buttons} nav={navigation} />
+      </div>
+
       <Problems data={servicesCards} heading={services.fields.heading!} />
       <Question title={`Есть вопросы? \nНапишите нам!`} />
       <Partner data={banks} />
-      <Services data={service} />
+
+      <div id='hash-section-2'>
+        <Services ref={serviceRef} data={service} />
+      </div>
+
       <Question
         title={'Оставьте заявку сейчас и мы подберем лучшие условия по ипотеке!'} />
       <Review />
       <Question
         title={'Вы можете оставить здесь свой отзыв'} />
-      <Comands data={comands} />
-      <div className='container'>
-        <Contact tel={contact} mail={mails} loc={location} />
+
+      <div id='hash-section-3'>
+        <Comands ref={comandRef} data={comands} />
       </div>
+
+      <div id='hash-section-4'>
+        <div className='container'>
+          <Contact ref={contactRef} tel={contact} mail={mails} loc={location} />
+        </div>
+      </div>
+
+
       <Maps loc={mapLoc.fields.once?.split(',')!} />
+
       <Footer />
     </>
   )

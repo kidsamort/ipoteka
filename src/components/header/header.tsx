@@ -1,23 +1,22 @@
 import styles from './header.module.css'
 import cn from 'classnames'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import OutsideClickHandler from 'react-outside-click-handler'
 import Image from 'next/image'
 import { HeaderProps } from 'components/header/header.props'
+import Link from 'next/link'
 
-
-const links = [
-  { name: 'Домашняя', href: '/' },
-  { name: 'Услуги', href: '/services' },
-  { name: 'О нас', href: '/about' },
-  { name: 'Контакты', href: '/contact' },
-]
 
 const white = '#fcfcfd'
+const links = [
+  { name: 'Домашняя', href: '#hash-section-1' },
+  { name: 'Услуги', href: '#hash-section-2' },
+  { name: 'О нас', href: '#hash-section-3' },
+  { name: 'Контакты', href: '#hash-section-4' },
+]
 
-const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
+const Header = ({ refs, nav, tel }: HeaderProps): JSX.Element => {
   const router = useRouter()
   const [menu, setMenu] = useState(false)
   const [navbar, setNavbar] = useState(false)
@@ -25,6 +24,8 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
   const openMenu = () => {
     setMenu(!menu)
   }
+  console.log(router.asPath)
+
 
   const closeMenu = () => {
     setMenu(false)
@@ -59,7 +60,7 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
       className={styles.section}
     >
       <div style={{}} className={cn('container', styles.container)}>
-        <Link href='/'>
+        <Link href={'/'}>
           <a
             className={cn(
               'body-bold',
@@ -83,14 +84,11 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
           <div className={menu ? styles.responsive_links : styles.links}>
             {links.map((item, index) => (
               <Link key={index} href={item.href}>
-                <a
-                  style={{ color: navbar ? (router.pathname == item.href ? 'red' : 'gray') : (router.pathname == item.href ? 'red' : 'gray') }}
-                  className={cn(
-                    'button-small',
-                    router.pathname == item.href
-                      ? styles.active
-                      : styles.inactive,
-                  )}
+                <a onClick={() => item.href}
+                   style={{ color: navbar ? (router.asPath == ('/' + item.href) ? 'red' : 'gray') : (router.asPath == ('/' + item.href) ? 'red' : 'white') }}
+                   className={cn(
+                     'button-small',
+                   )}
                 >
                   {item.name}
                 </a>
