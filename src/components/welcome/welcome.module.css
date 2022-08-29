@@ -135,11 +135,21 @@
     font-size: 20px;
     line-height: 27px;
 }
+@media (max-width: 502px) {
+    .wrapper{
+        height: 812px;
+    }
+    .image_container {
+        height: 812px;
+    }
+    .image{
+        min-width: 320px;
+    }
 
+}
 @media (min-width: 502px) {
     .wrapper {
         padding: 60px 0;
-        max-width: 100vh;
         grid-template-rows: auto 1fr auto;
     }
 

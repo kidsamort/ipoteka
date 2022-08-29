@@ -110,7 +110,13 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
             {/*</button>*/}
           </div>
         </OutsideClickHandler>
-        {!navbar && <div style={{width: '300px'}}></div>}
+        {!navbar && <div style={{width: '300px'}}>
+          <a href={`tel:+7${tel}`}
+             style={{ color: navbar ? 'black' : 'white' }}
+             className={styles.contactNumber}>
+            Работаем: с <span style={{color: 'red'}}>9:00</span> до <span style={{color: 'red'}}>23:00</span>
+          </a>
+        </div>}
         <ul style={{ display: navbar ? 'grid' : 'none' }}
             className={styles.contacts}>
           {tel.map((item, index) => {
