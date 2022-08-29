@@ -125,13 +125,13 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
               <li key={index}>
                 <div className={styles.contactsIcon}>
                   <a href={`https://wa.me/7${item}`}>
-                    <Image
+                    <img
                       src={`/whatsapp.png`}
                       width={32}
                       height={32} alt={'Ватсап'} />
                   </a>
                   <a href={`https://t.me/+7${item}`}>
-                    <Image
+                    <img
                       src={`/telegram.png`}
                       width={32}
                       height={32} alt={'Ватсап'} />

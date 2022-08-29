@@ -28,6 +28,7 @@ import { useEffect, useState } from 'react'
 import Comands from 'components/comands/comands'
 import Head from 'next/head'
 import Header from 'components/header'
+import Footer from 'components/footer'
 
 interface HomeProps {
   mapLoc: IMap,
@@ -79,7 +80,7 @@ const Home = ({
   return (
     <>
       <Head>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <script type='text/javascript' src={'/replan.js'} async/>
       </Head>
       <Header nav={navigation} tel={phones}/>
@@ -101,6 +102,7 @@ const Home = ({
         <Contact tel={contact} mail={mails} loc={location} />
       </div>
       <Maps loc={mapLoc.fields.once?.split(',')!} />
+      <Footer />
     </>
   )
 }
