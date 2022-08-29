@@ -1,4 +1,13 @@
-.card            {
+.wrapperCard {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 50px;
+}
+
+.card {
+    height: 100%;
+    margin-left: 20px;
+    max-width: 450px;
     padding: 45px 19px;
     background: #F4F5F6;
     border-radius: 12px;
@@ -49,4 +58,10 @@
     line-height: 17px;
     letter-spacing: -0.01em;
     color: #595959;
+}
+
+@media (min-width: 1024px) {
+    .wrapper ul:last-child {
+        display: none;
+    }
 }

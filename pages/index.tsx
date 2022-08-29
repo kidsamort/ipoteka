@@ -14,14 +14,14 @@ import {
   loadHomeNav,
   loadHomeServ,
   loadHomeServices,
-  loadHomeServicesCards, loadMap,
+  loadHomeServicesCards, loadMap, loadReview,
 
 } from 'contentfuls/lib/home'
 import {
   IBank, IComands, IContacts,
   IHome, IHomeButton, IMap,
   INav,
-  IPartner, IService, IServices, IServicesCard,
+  IPartner, IReview, IService, IServices, IServicesCard,
 } from 'contentfuls/types/contentful'
 import { loadContacts } from 'contentfuls/lib/footer'
 import { MutableRefObject, useEffect, useRef, useState } from 'react'
@@ -41,7 +41,8 @@ interface HomeProps {
   contacts: IContacts[],
   servicesCards: IServicesCard[],
   comands: IComands[],
-  navigation: INav
+  navigation: INav,
+  review: IReview[],
 }
 
 const Home = ({
@@ -55,6 +56,7 @@ const Home = ({
                 navigation,
                 mapLoc,
                 comands,
+                review,
               }: HomeProps) => {
   const [phones, setPhones] = useState<string[]>([])
   const [mails, setMails] = useState<string[]>([])
@@ -105,7 +107,9 @@ const Home = ({
 
       <Question
         title={'Оставьте заявку сейчас и мы подберем лучшие условия по ипотеке!'} />
-      <Review />
+      <div className='container'>
+        <Review data={review} />
+      </div>
       <Question
         title={'Вы можете оставить здесь свой отзыв'} />
 
@@ -138,11 +142,13 @@ export async function getStaticProps() {
   const comands = await loadHomeComands().then(data => data.items)
   const [navigation] = await loadHomeNav().then(data => data.items)
   const [mapLoc] = await loadMap().then(data => data.items)
+  const review = await loadReview().then(data => data.items)
 
 
   return {
     props: {
       home: homeItem,
+      review,
       comands,
       mapLoc,
       buttons,

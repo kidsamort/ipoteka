@@ -243,6 +243,40 @@ export interface IPartner extends Entry<IPartnerFields> {
   }
 }
 
+export interface IReviewFields {
+  /** Имя */
+  name?: string | undefined
+
+  /** Город */
+  town?: string | undefined
+
+  /** Рейтинг */
+  rating?: number | undefined
+
+  /** Аватар */
+  avatar?: Asset | undefined
+
+  /** Текст */
+  text?: Document | undefined
+}
+
+export interface IReview extends Entry<IReviewFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'review'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
 export interface IServiceFields {
   /** Заголовок */
   title?: string | undefined
@@ -331,6 +365,7 @@ export type CONTENT_TYPE =
   | 'map'
   | 'nav'
   | 'partner'
+  | 'review'
   | 'service'
   | 'services'
   | 'servicesCard'

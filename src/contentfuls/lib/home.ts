@@ -34,3 +34,6 @@ export const loadHomeComands = async () => {
 export const loadMap = async () => {
   return await getLinkEntry('map')
 }
+export const loadReview = async () => {
+  return await getLinkEntry('review')
+}
