@@ -76,11 +76,6 @@ const Home = ({
     setContact(con)
   }, [])
 
-  const homeRef = useRef(null)
-  const serviceRef = useRef(null)
-  const comandRef = useRef(null)
-  const contactRef = useRef(null)
-
   // @ts-ignore
   const executeScroll = (ref: MutableRefObject<null>) => ref.current.scrollIntoView()
 
@@ -92,11 +87,11 @@ const Home = ({
         <script type='text/javascript' src={'/replan.js'} async />
       </Head>
 
-      <Header refs={[homeRef, serviceRef, comandRef, contactRef]}
-              nav={navigation} tel={phones} />
+      <Header
+        nav={navigation} tel={phones} />
 
       <div id='hash-section-1'>
-        <Welcome ref={homeRef} title={home.fields.title!}
+        <Welcome title={home.fields.title!}
                  subtitle={home.fields.subtitle!}
                  info={home.fields.info!} action={home.fields.action!}
                  bg={home.fields.background!.fields.file.url}
@@ -108,7 +103,7 @@ const Home = ({
       <Partner data={banks} />
 
       <div id='hash-section-2'>
-        <Services ref={serviceRef} data={service} />
+        <Services data={service} />
       </div>
 
       <Question
@@ -118,12 +113,12 @@ const Home = ({
         title={'Вы можете оставить здесь свой отзыв'} />
 
       <div id='hash-section-3'>
-        <Comands ref={comandRef} data={comands} />
+        <Comands data={comands} />
       </div>
 
       <div id='hash-section-4'>
         <div className='container'>
-          <Contact ref={contactRef} tel={contact} mail={mails} loc={location} />
+          <Contact tel={contact} mail={mails} loc={location} />
         </div>
       </div>
 

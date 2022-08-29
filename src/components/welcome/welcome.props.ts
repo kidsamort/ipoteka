@@ -17,5 +17,4 @@ export interface WelcomeProps extends ComponentPropsWithoutRef<'div'> {
   buttons: IHomeButton[];
   nav: INav;
   children?: ReactNode;
-  ref: LegacyRef<HTMLDivElement> | undefined
 }
