@@ -19,20 +19,19 @@ const Welcome = ({
   // const phones: string[] = []
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.logoWrapper}>
-        <div className={'container'}>
-          {nav ? <Image src={`http:${nav.fields.logo?.fields.file.url}`}
-                        width={'131px'} height={'93px'} alt={'logo'} /> :
-            <div className={styles.logo}>
-              <p>ЗДЕСЬ</p>
-              <p>ИПОТЕКА</p>
-            </div>}
+    <div className={'container'}>
+      <div className={styles.wrapper}>
+        <div style={{height: '60px'}}></div>
+        {/*<div className={styles.logoWrapper}>*/}
+        {/*    {nav ? <Image src={`http:${nav.fields.logo?.fields.file.url}`}*/}
+        {/*                  width={'131px'} height={'93px'} alt={'logo'} /> :*/}
+        {/*      <div className={styles.logo}>*/}
+        {/*        <p>ЗДЕСЬ</p>*/}
+        {/*        <p>ИПОТЕКА</p>*/}
+        {/*      </div>}*/}
 
-        </div>
-      </div>
-      <div className={styles.content}>
-        <div className={'container'}>
+        {/*</div>*/}
+        <div className={styles.content}>
           <div className={styles.contentWrapper}>
             <div className={styles.headingWrapper}>
               <h1 className={styles.headingText}>{title}</h1>
@@ -60,36 +59,37 @@ const Welcome = ({
                             height={32} alt={'Ватсап'} />
                         </a>
                       </div>
-                      <p className={styles.contactNumber}>
+                      <a  href={`tel:+7${tel}`} className={styles.contactNumber}>
                         {item.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`)}
-                      </p>
+                      </a>
                     </li>
                   )
                 })}
               </ul>
             </div>
           </div>
+          <div className={styles.buttonWrapper}>
+            {buttons.map((data, index) =>
+              <Button className={styles.button}
+                      key={index}>{data.fields.text}
+              </Button>)
+            }
+          </div>
         </div>
-      </div>
-      <div className={styles.buttonWrapper}>
-        <div className={'container'}>
-          {buttons.map((data, index) => <Button
-            key={index}>{data.fields.text}</Button>)}
 
-        </div>
-      </div>
-      <div className={styles.wrapperImage}>
-        <div className={styles.image_container}>
-          <Image
-            className={styles.image}
-            src={`http:${bg}`}
-            layout='fill'
-            placeholder='blur'
-            sizes='(min-width: 812px)'
-            blurDataURL={`http:${bg}`}
-            alt={'welcome image'}
-          />
-          <div className={styles.overlay} />
+        <div className={styles.wrapperImage}>
+          <div className={styles.image_container}>
+            <Image
+              className={styles.image}
+              src={`http:${bg}`}
+              layout='fill'
+              placeholder='blur'
+              sizes='(min-width: 812px)'
+              blurDataURL={`http:${bg}`}
+              alt={'welcome image'}
+            />
+            <div className={styles.overlay} />
+          </div>
         </div>
       </div>
     </div>

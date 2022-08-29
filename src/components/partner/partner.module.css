@@ -7,14 +7,28 @@
     gap: 46px;
     margin-bottom: 50px;
 }
+/*.wrapper ul {*/
+/*    display: grid;*/
+/*    grid-auto-flow: column;*/
+/*    gap: 30px;*/
 
+/*}*/
+.wrapper ul li:last-child div{
+    max-width: 100%;
+}
+
+.wrapper ul li:first-child div {
+    /*border: 1px solid black;*/
+
+}
 
 .bank {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 90%;
     height: 80px;
-    margin-right: 50px;
+    padding: 0  10px;
     background: #F4F5F6;
     border-radius: 6px;
 
@@ -25,4 +39,9 @@
 .image{
     /*width: 100%;*/
     /*height: 40px;*/
+}
+@media (min-width: 1024px) {
+    .wrapper ul:last-child {
+        display: none;
+    }
 }

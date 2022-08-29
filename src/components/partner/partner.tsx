@@ -2,14 +2,13 @@ import styles from 'components/partner/partner.module.css'
 import { PartnerProps } from 'components/partner/partner.props'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import Image from 'next/image'
 import Title from 'components/UI/title'
 
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    partialVisibilityGutter: 60,
+    partialVisibilityGutter: 20,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -19,7 +18,7 @@ const responsive = {
   mobile: {
     breakpoint: { max: 627, min: 0 },
     items: 1,
-    partialVisibilityGutter: 70,
+    partialVisibilityGutter: 60,
   },
 }
 
@@ -66,11 +65,12 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
             {data.length > 5 && data.map((item, index) => {
               return (
                 index > 5 && index <= 8 && (
-                  <div key={index} className={styles.bank}><img
-                    height={index === 6 ? '40px' : '30px'}
+                  <div key={index} className={styles.bank}>
+                    <img
+                      height={index === 6 ? '40px' : '30px'}
 
-                    src={`http:${item.fields.logo?.fields.file.url}`}
-                    alt={item.fields.name} />
+                      src={`http:${item.fields.logo?.fields.file.url}`}
+                      alt={item.fields.name} />
                   </div>
                 )
               )

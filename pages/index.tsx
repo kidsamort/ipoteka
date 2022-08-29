@@ -27,6 +27,7 @@ import { loadContacts } from 'contentfuls/lib/footer'
 import { useEffect, useState } from 'react'
 import Comands from 'components/comands/comands'
 import Head from 'next/head'
+import Header from 'components/header'
 
 interface HomeProps {
   mapLoc: IMap,
@@ -79,7 +80,9 @@ const Home = ({
     <>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <script type='text/javascript' src={'/replan.js'} />
       </Head>
+      <Header nav={navigation} tel={phones}/>
       <Welcome title={home.fields.title!} subtitle={home.fields.subtitle!}
                info={home.fields.info!} action={home.fields.action!}
                bg={home.fields.background!.fields.file.url}
@@ -98,6 +101,7 @@ const Home = ({
         <Contact tel={contact} mail={mails} loc={location} />
       </div>
       <Maps loc={mapLoc.fields.once?.split(',')!} />
+
     </>
   )
 }
