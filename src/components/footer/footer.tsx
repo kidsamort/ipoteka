@@ -15,19 +15,19 @@ import {
 
 const sites = [
   {
-    link: '#hash-section-1',
+    link: '#home',
     title: 'Домашняя',
   },
   {
-    link: '#hash-section-2',
+    link: '#services',
     title: 'Услуги',
   },
   {
-    link: '#hash-section-3',
+    link: '#about',
     title: 'О нас',
   },
   {
-    link: '#hash-section-4',
+    link: '#contacts',
     title: 'Контакты',
   },
 ]

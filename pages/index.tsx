@@ -89,7 +89,7 @@ const Home = ({
       <Header
         nav={navigation} tel={phones} />
 
-      <div id='hash-section-1'>
+      <div id='home'>
         <Welcome title={home.fields.title!}
                  subtitle={home.fields.subtitle!}
                  info={home.fields.info!} action={home.fields.action!}
@@ -100,7 +100,7 @@ const Home = ({
       {/*<Question title={`Есть вопросы? \nНапишите нам!`} />*/}
       <Partner data={banks} />
 
-      <div id='hash-section-2'>
+      <div id='services'>
         <Services data={service} />
       </div>
 
@@ -112,11 +112,11 @@ const Home = ({
       {/*<Question*/}
       {/*  title={'Вы можете оставить здесь свой отзыв'} />*/}
 
-      <div id='hash-section-3'>
+      <div id='about'>
         <Comands data={comands} />
       </div>
 
-      <div id='hash-section-4'>
+      <div id='contacts'>
         <div className='container'>
           <Contact tel={contact} mail={mails} loc={location} />
         </div>

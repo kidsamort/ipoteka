@@ -18,10 +18,11 @@ const Welcome = ({
   // console.log('1234567890'.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`))
   // const phones: string[] = []
 
+
   return (
     <div className={'container'}>
       <div className={styles.wrapper}>
-        <div style={{height: '60px'}}></div>
+        <div style={{ height: '60px' }}></div>
         {/*<div className={styles.logoWrapper}>*/}
         {/*    {nav ? <Image src={`http:${nav.fields.logo?.fields.file.url}`}*/}
         {/*                  width={'131px'} height={'93px'} alt={'logo'} /> :*/}
@@ -59,7 +60,8 @@ const Welcome = ({
                             height={32} alt={'Ватсап'} />
                         </a>
                       </div>
-                      <a  href={`tel:+7${item}`} className={styles.contactNumber}>
+                      <a href={`tel:+7${item}`}
+                         className={styles.contactNumber}>
                         {item.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`)}
                       </a>
                     </li>
@@ -69,11 +71,16 @@ const Welcome = ({
             </div>
           </div>
           <div className={styles.buttonWrapper}>
-            {buttons.map((data, index) =>
-              <Button id={'button'} className={styles.button}
-                      key={index}>{data.fields.text}
-              </Button>)
-            }
+            {buttons.map((data, index) => {
+              return (
+                <a key={index} className={['replain-link', styles.button].join(' ')} href='#replain'
+                   data-title={data.fields.text}
+                   data-border=''
+                   style={{maxWidth: '500px', height: '60px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}
+                   data-background=''
+                   data-color=''></a>
+              )
+            })}
           </div>
         </div>
 

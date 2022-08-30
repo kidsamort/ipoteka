@@ -12,10 +12,10 @@ import { GrClose } from 'react-icons/gr'
 
 const white = '#fcfcfd'
 const links = [
-  { name: 'Главная', href: '#hash-section-1' },
-  { name: 'Услуги', href: '#hash-section-2' },
-  { name: 'О нас', href: '#hash-section-3' },
-  { name: 'Контакты', href: '#hash-section-4' },
+  { name: 'Главная', href: '#home' },
+  { name: 'Услуги', href: '#services' },
+  { name: 'О нас', href: '#about' },
+  { name: 'Контакты', href: '#contacts' },
 ]
 
 const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
@@ -26,9 +26,6 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
   const openMenu = () => {
     setMenu(!menu)
   }
-  console.log(router.asPath)
-
-
   const closeMenu = () => {
     setMenu(false)
   }

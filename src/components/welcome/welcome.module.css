@@ -105,8 +105,18 @@
     gap: 15px;
 }
 
-.button {
+.button span:first-child{
+    display: none;
 }
+.button span{
+    font-family: Inter;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 19px;
+}
+
 .buttonWrapper {
 }
 .contacts li {
