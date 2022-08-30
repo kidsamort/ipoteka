@@ -11,7 +11,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: var(--b0);
 }
-
+.t-container{
+    color: black;
+}
 .container {
     margin: 0 auto;
     padding: 0 32px;

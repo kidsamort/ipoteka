@@ -1,6 +1,5 @@
 import Welcome from 'components/welcome'
 import Problems from 'components/problems'
-import Question from 'components/question'
 import Partner from 'components/partner'
 import Services from 'components/services'
 import Review from 'components/review'
@@ -24,7 +23,7 @@ import {
   IPartner, IReview, IService, IServices, IServicesCard,
 } from 'contentfuls/types/contentful'
 import { loadContacts } from 'contentfuls/lib/footer'
-import {  useEffect,  useState } from 'react'
+import { useEffect, useState } from 'react'
 import Comands from 'components/comands/comands'
 import Head from 'next/head'
 import Header from 'components/header'
@@ -78,6 +77,7 @@ const Home = ({
     setContact(con)
   }, [])
 
+
   return (
     <>
       <Head>
@@ -97,20 +97,20 @@ const Home = ({
                  tel={phones} buttons={buttons} nav={navigation} />
       </div>
       <Problems data={servicesCards} heading={services.fields.heading!} />
-      <Question title={`Есть вопросы? \nНапишите нам!`} />
+      {/*<Question title={`Есть вопросы? \nНапишите нам!`} />*/}
       <Partner data={banks} />
 
       <div id='hash-section-2'>
         <Services data={service} />
       </div>
 
-      <Question
-        title={'Оставьте заявку сейчас и мы подберем лучшие условия по ипотеке!'} />
+      {/*<Question*/}
+      {/*  title={'Оставьте заявку сейчас и мы подберем лучшие условия по ипотеке!'} />*/}
       <div className='container'>
         <Review data={review} />
       </div>
-      <Question
-        title={'Вы можете оставить здесь свой отзыв'} />
+      {/*<Question*/}
+      {/*  title={'Вы можете оставить здесь свой отзыв'} />*/}
 
       <div id='hash-section-3'>
         <Comands data={comands} />

@@ -15,35 +15,27 @@ import {
 
 const sites = [
   {
-    link: '/',
+    link: '#hash-section-1',
     title: 'Домашняя',
   },
   {
-    link: '/about',
-    title: 'Отзывы',
+    link: '#hash-section-2',
+    title: 'Услуги',
   },
   {
-    link: '/about',
+    link: '#hash-section-3',
     title: 'О нас',
   },
   {
-    link: '/blog',
-    title: 'Блог',
+    link: '#hash-section-4',
+    title: 'Контакты',
   },
 ]
 
 const information = [
   {
-    title: 'FAQ',
-  },
-  {
     title: ' Политика конфиденциальности',
-  },
-  {
-    title: 'Политика cookie',
-  },
-  {
-    title: 'Отправить запрос',
+    url: '/privacy',
   },
 ]
 
@@ -66,17 +58,17 @@ const Footer = ({}: FooterProps): JSX.Element => {
           </div>
 
           <div>
-            <p style={{color: 'black'}}
-              className={cn('body-2-bold')}>{dataFooter && dataFooter.action}</p>
-            <div className={styles.newsletter}>
-              <input
-                className={cn('caption', styles.input)}
-                placeholder='Ваша почта'
-                type={'email'}
-              />
-              <button
-                className={cn('button')}>{dataFooter && dataFooter.button}</button>
-            </div>
+            {/*<p style={{ color: 'black' }}*/}
+            {/*   className={cn('body-2-bold')}>{dataFooter && dataFooter.action}</p>*/}
+            {/*<div className={styles.newsletter}>*/}
+            {/*  <input*/}
+            {/*    className={cn('caption', styles.input)}*/}
+            {/*    placeholder='Ваша почта'*/}
+            {/*    type={'email'}*/}
+            {/*  />*/}
+            {/*  <button*/}
+            {/*    className={cn('button')}>{dataFooter && dataFooter.button}</button>*/}
+            {/*</div>*/}
           </div>
         </div>
         <div className={styles.sub_content}>
@@ -100,7 +92,9 @@ const Footer = ({}: FooterProps): JSX.Element => {
                   key={index}
                   className={cn('button-small', styles.button)}
                 >
-                  {item.title}
+                  <Link href={item.url}>
+                    {item.title}
+                  </Link>
                 </button>
               ))}
             </div>
@@ -113,7 +107,6 @@ const Footer = ({}: FooterProps): JSX.Element => {
                   key={index}
                   className={cn('button-small', styles.button)}
                 >
-
                   {`${item.fields.title} ${item.fields.description?.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`)}`}
                 </button>
               ))}

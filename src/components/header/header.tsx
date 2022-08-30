@@ -12,7 +12,7 @@ import { GrClose } from 'react-icons/gr'
 
 const white = '#fcfcfd'
 const links = [
-  { name: 'Домашняя', href: '#hash-section-1' },
+  { name: 'Главная', href: '#hash-section-1' },
   { name: 'Услуги', href: '#hash-section-2' },
   { name: 'О нас', href: '#hash-section-3' },
   { name: 'Контакты', href: '#hash-section-4' },
@@ -110,14 +110,16 @@ const Header = ({ nav, tel }: HeaderProps): JSX.Element => {
             {/*</button>*/}
           </div>
         </OutsideClickHandler>
-        {!navbar && <div className={styles.jobTime}>
-          <a href={`tel:${tel[0]}`}
-             style={{ color: navbar ? 'black' : 'white' }}
-             className={styles.contactNumber}>
-            Работаем: с <span style={{ color: 'red' }}>9:00</span> до <span
-            style={{ color: 'red' }}>23:00</span>
-          </a>
-        </div>}
+        {!navbar && <div style={{ width: '250px' }} />}
+
+        {/*{!navbar && <div className={styles.jobTime}>*/}
+        {/*  <a href={`tel:${tel[0]}`}*/}
+        {/*     style={{ color: navbar ? 'black' : 'white' }}*/}
+        {/*     className={styles.contactNumber}>*/}
+        {/*    Работаем: с <span style={{ color: 'red' }}>9:00</span> до <span*/}
+        {/*    style={{ color: 'red' }}>23:00</span>*/}
+        {/*  </a>*/}
+        {/*</div>}*/}
         <ul style={{ display: navbar ? 'grid' : 'none' }}
             className={styles.contacts}>
           {tel.map((item, index) => {

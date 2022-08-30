@@ -70,7 +70,7 @@ const Welcome = ({
           </div>
           <div className={styles.buttonWrapper}>
             {buttons.map((data, index) =>
-              <Button className={styles.button}
+              <Button id={'button'} className={styles.button}
                       key={index}>{data.fields.text}
               </Button>)
             }
