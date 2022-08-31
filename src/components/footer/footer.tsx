@@ -37,6 +37,14 @@ const information = [
     title: ' Политика конфиденциальности',
     url: '/privacy',
   },
+  {
+    title: ' ИНН: 503113605694',
+    url: '',
+  },
+  {
+    title: 'ОГРНИП: 322508100419700',
+    url: '',
+  },
 ]
 
 const Footer = ({}: FooterProps): JSX.Element => {

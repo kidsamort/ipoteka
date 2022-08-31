@@ -36,7 +36,8 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
                 index <= 2 && (
                   <div key={index} className={styles.bank}>
                     <img
-                      height={index === 2 ? '20px' : '40px'}
+                      style={{maxWidth: '200px', maxHeight: '40px'}}
+
                       src={`http:${item.fields.logo?.fields.file.url}`}
                       alt={item.fields.name} />
                   </div>
@@ -52,7 +53,10 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
                     <div className={styles.imageBlock}>
                       <img
                         className={styles.image}
-                        height={index === 3 ? '30px' : '40px'}
+                        style={{maxWidth: '200px', maxHeight: '40px'}}
+
+
+
                         src={`http:${item.fields.logo?.fields.file.url}`}
                         alt={item.fields.name} />
                     </div>
@@ -67,7 +71,7 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
                 index > 5 && index <= 8 && (
                   <div key={index} className={styles.bank}>
                     <img
-                      height={index === 6 ? '40px' : '30px'}
+                      style={{maxWidth: '200px', maxHeight: '40px'}}
 
                       src={`http:${item.fields.logo?.fields.file.url}`}
                       alt={item.fields.name} />
