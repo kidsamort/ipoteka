@@ -27,10 +27,14 @@
     justify-content: center;
     align-items: center;
     max-width: 90%;
-    height: 80px;
-    padding: 0  10px;
+    height: 110px;
+    padding: 10px 10px;
     background: #F4F5F6;
     border-radius: 6px;
+
+}
+.imageBank{
+    position: relative;
 
 }
 .imageBlock {

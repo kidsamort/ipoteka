@@ -3,6 +3,7 @@ import { PartnerProps } from 'components/partner/partner.props'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import Title from 'components/UI/title'
+import Image from 'next/image'
 
 const responsive = {
   desktop: {
@@ -35,9 +36,9 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
               return (
                 index <= 2 && (
                   <div key={index} className={styles.bank}>
-                    <img
-                      style={{maxWidth: '200px', maxHeight: '40px'}}
-
+                    <Image
+                      width={item.fields.logo?.fields.file.details.image?.width! / 4}
+                      height={item.fields.logo?.fields.file.details.image?.height! / 4}
                       src={`http:${item.fields.logo?.fields.file.url}`}
                       alt={item.fields.name} />
                   </div>
@@ -51,12 +52,9 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
                 index > 2 && index <= 5 && (
                   <div key={index} className={styles.bank}>
                     <div className={styles.imageBlock}>
-                      <img
-                        className={styles.image}
-                        style={{maxWidth: '200px', maxHeight: '40px'}}
-
-
-
+                      <Image
+                        width={item.fields.logo?.fields.file.details.image?.width! / 4}
+                        height={item.fields.logo?.fields.file.details.image?.height! / 4}
                         src={`http:${item.fields.logo?.fields.file.url}`}
                         alt={item.fields.name} />
                     </div>
@@ -70,9 +68,9 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
               return (
                 index > 5 && index <= 8 && (
                   <div key={index} className={styles.bank}>
-                    <img
-                      style={{maxWidth: '200px', maxHeight: '40px'}}
-
+                    <Image
+                      width={item.fields.logo?.fields.file.details.image?.width! / 4}
+                      height={item.fields.logo?.fields.file.details.image?.height! / 4}
                       src={`http:${item.fields.logo?.fields.file.url}`}
                       alt={item.fields.name} />
                   </div>

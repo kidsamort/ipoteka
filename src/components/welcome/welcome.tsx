@@ -1,9 +1,7 @@
 import { WelcomeProps } from 'components/welcome/welcome.props'
 import styles from './welcome.module.css'
 import Image from 'next/image'
-import Button from 'components/UI/button'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { useEffect, useState } from 'react'
 
 const Welcome = ({
                    title,
@@ -13,25 +11,11 @@ const Welcome = ({
                    bg,
                    tel,
                    buttons,
-                   nav,
                  }: WelcomeProps): JSX.Element => {
-  // console.log('1234567890'.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`))
-  // const phones: string[] = []
-
-
   return (
     <div className={'container'}>
       <div className={styles.wrapper}>
         <div style={{ height: '60px' }}></div>
-        {/*<div className={styles.logoWrapper}>*/}
-        {/*    {nav ? <Image src={`http:${nav.fields.logo?.fields.file.url}`}*/}
-        {/*                  width={'131px'} height={'93px'} alt={'logo'} /> :*/}
-        {/*      <div className={styles.logo}>*/}
-        {/*        <p>ЗДЕСЬ</p>*/}
-        {/*        <p>ИПОТЕКА</p>*/}
-        {/*      </div>}*/}
-
-        {/*</div>*/}
         <div className={styles.content}>
           <div className={styles.contentWrapper}>
             <div className={styles.headingWrapper}>
@@ -62,7 +46,7 @@ const Welcome = ({
                       </div>
                       <a href={`tel:+7${item}`}
                          className={styles.contactNumber}>
-                        {item.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`)}
+                        {item.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3) => `+7 (${code}) ${n1}-${n2}-${n3}`)}
                       </a>
                     </li>
                   )
@@ -87,6 +71,7 @@ const Welcome = ({
         <div className={styles.wrapperImage}>
           <div className={styles.image_container}>
             <Image
+              priority={true}
               className={styles.image}
               src={`http:${bg}`}
               layout='fill'

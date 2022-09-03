@@ -3,9 +3,7 @@ import { ReviewProps } from 'components/review/review.props'
 import Title from 'components/UI/title'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Carousel from 'react-multi-carousel'
-import { useEffect, useState } from 'react'
-import StarIcon from 'components/UI/rating/star.svg'
-import Rating from 'components/UI/rating'
+import Image from 'next/image'
 
 const responsive = {
   desktop: {
@@ -35,9 +33,12 @@ const Review = ({ data }: ReviewProps): JSX.Element => {
           return (
             <div key={index} className={styles.card}>
               <div className={styles.heading}>
-                <img className={styles.avatar}
-                     src={`http:/${item.fields.avatar?.fields.file.url}`}
-                     alt='' />
+                <Image className={styles.avatar}
+                       width={'32px'}
+                       height={'32px'}
+                       layout={'fixed'}
+                       src={`http:/${item.fields.avatar?.fields.file.url}`}
+                       alt='' />
                 <div className={styles.user}>
                   <div style={{
                     display: 'flex',

@@ -28,6 +28,7 @@ import Comands from 'components/comands/comands'
 import Head from 'next/head'
 import Header from 'components/header'
 import Footer from 'components/footer'
+import { GetStaticProps } from 'next'
 
 interface HomeProps {
   mapLoc: IMap,
@@ -73,9 +74,9 @@ const Home = ({
     contacts.map(data => data.fields.slug === 'adres' && addres.push(data.fields.description!))
     setLocations(addres)
     const con: string[] = []
-    contacts.map(data => data.fields.slug === 'telefon' && con.push(data.fields.description!.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3, n4) => `+7 (${code}) ${n1}-${n2}-${n3}`)))
+    contacts.map(data => data.fields.slug === 'telefon' && con.push(data.fields.description!.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3) => `+7 (${code}) ${n1}-${n2}-${n3}`)))
     setContact(con)
-  }, [])
+  }, [contacts])
 
 
   return (
@@ -84,6 +85,7 @@ const Home = ({
         <meta name='viewport'
               content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
         <script type='text/javascript' src={'/replan.js'} async />
+        <title>Ипотека Здесь</title>
       </Head>
 
       <Header
@@ -130,7 +132,7 @@ const Home = ({
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const [homeItem] = await loadHome().then(data => data.items)
   const buttons = await loadHomeButtons().then(data => data.items)
   const [services] = await loadHomeServices().then(data => data.items)
@@ -158,6 +160,7 @@ export async function getStaticProps() {
       contacts,
       navigation,
     },
+    revalidate: 300
   }
 }
 
