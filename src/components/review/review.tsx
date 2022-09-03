@@ -37,6 +37,7 @@ const Review = ({ data }: ReviewProps): JSX.Element => {
                        width={'32px'}
                        height={'32px'}
                        layout={'fixed'}
+                       blurDataURL={`http:${item.fields.avatar?.fields.file.url}`}
                        src={`http:/${item.fields.avatar?.fields.file.url}`}
                        alt='' />
                 <div className={styles.user}>

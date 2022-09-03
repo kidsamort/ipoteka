@@ -37,6 +37,7 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
                 index <= 2 && (
                   <div key={index} className={styles.bank}>
                     <Image
+                      blurDataURL={`http:${item.fields.logo?.fields.file.url}`}
                       width={item.fields.logo?.fields.file.details.image?.width! / 4}
                       height={item.fields.logo?.fields.file.details.image?.height! / 4}
                       src={`http:${item.fields.logo?.fields.file.url}`}
@@ -53,6 +54,7 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
                   <div key={index} className={styles.bank}>
                     <div className={styles.imageBlock}>
                       <Image
+                        blurDataURL={`http:${item.fields.logo?.fields.file.url}`}
                         width={item.fields.logo?.fields.file.details.image?.width! / 4}
                         height={item.fields.logo?.fields.file.details.image?.height! / 4}
                         src={`http:${item.fields.logo?.fields.file.url}`}
@@ -69,6 +71,7 @@ const Partner = ({ data }: PartnerProps): JSX.Element => {
                 index > 5 && index <= 8 && (
                   <div key={index} className={styles.bank}>
                     <Image
+                      blurDataURL={`http:${item.fields.logo?.fields.file.url}`}
                       width={item.fields.logo?.fields.file.details.image?.width! / 4}
                       height={item.fields.logo?.fields.file.details.image?.height! / 4}
                       src={`http:${item.fields.logo?.fields.file.url}`}
