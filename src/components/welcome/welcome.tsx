@@ -71,7 +71,7 @@ const Welcome = ({
         <div className={styles.wrapperImage}>
           <div className={styles.image_container}>
             <Image
-              priority={true}
+              priority
               className={styles.image}
               src={`http:${bg}`}
               layout='fill'

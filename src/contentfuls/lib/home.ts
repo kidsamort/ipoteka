@@ -37,3 +37,6 @@ export const loadMap = async () => {
 export const loadReview = async () => {
   return await getLinkEntry('review')
 }
+export const loadFeedback = async () => {
+  return await getLinkEntry('Feedback')
+}

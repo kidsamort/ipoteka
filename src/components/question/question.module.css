@@ -1,15 +1,13 @@
 .questionInputWrapper {
     display: grid;
     gap: 24px;
-    max-width: 1024px;
-    margin: 0 auto;
 }
 
 .questionInput {
+    font-family: Inter, serif;
     padding: 24px 15px;
     border: 1px solid #E6E8EC;
     border-radius: 8px;
-    width: 100%;
 }
 
 .questionInput::placeholder {
@@ -20,12 +18,14 @@
     letter-spacing: -0.01em;
     color: #595959;
 }
-.confirm{
+
+.confirm {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: start;
     gap: 10px;
 }
+
 .confirmText {
     font-weight: 400;
     font-size: 14px;
@@ -34,11 +34,33 @@
 
     color: #595959;
 }
-.image{
-    display: none;
+
+.imageContainer {
+    position: relative;
+    width: 500px;
+    height: 100%;
 }
+
+@media (max-width: 1024px) {
+    .imageContainer {
+        width: 350px;
+    }
+}
+
+@media (max-width: 767px) {
+    .imageContainer {
+        display: none;
+    }
+}
+
 @media (min-width: 768px) {
-    .image{
+    .imageContainer {
+        grid-row: 1/-6;
+        grid-column: 1/2;
+        object-fit: cover;
+    }
+
+    .image {
         height: 463px;
         display: block;
         grid-row: 1/-6;
@@ -47,12 +69,14 @@
         border-radius: 12px;
 
     }
+
     .questionInputWrapper {
-        grid-template-columns: auto 1fr ;
+        grid-template-columns: auto 1fr;
     }
 }
+
 @media (min-width: 1024px) {
-    .image{
+    .image {
         width: 100%;
     }
 }

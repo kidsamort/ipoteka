@@ -6,7 +6,7 @@ import Review from 'components/review'
 import Contact from 'components/contact'
 import Maps from 'components/map'
 import {
-  loadBankLogo,
+  loadBankLogo, loadFeedback,
   loadHome,
   loadHomeButtons,
   loadHomeComands,
@@ -17,7 +17,7 @@ import {
 
 } from 'contentfuls/lib/home'
 import {
-  IBank, IComands, IContacts,
+  IBank, IComands, IContacts, IFeedback,
   IHome, IHomeButton, IMap,
   INav,
   IPartner, IReview, IService, IServices, IServicesCard,
@@ -29,6 +29,7 @@ import Head from 'next/head'
 import Header from 'components/header'
 import Footer from 'components/footer'
 import { GetStaticProps } from 'next'
+import Question from 'components/question'
 
 interface HomeProps {
   mapLoc: IMap,
@@ -43,6 +44,7 @@ interface HomeProps {
   comands: IComands[],
   navigation: INav,
   review: IReview[],
+  feedback: IFeedback[],
 }
 
 const Home = ({
@@ -57,6 +59,7 @@ const Home = ({
                 mapLoc,
                 comands,
                 review,
+                feedback,
               }: HomeProps) => {
   const [phones, setPhones] = useState<string[]>([])
   const [mails, setMails] = useState<string[]>([])
@@ -77,8 +80,6 @@ const Home = ({
     contacts.map(data => data.fields.slug === 'telefon' && con.push(data.fields.description!.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, (s, code, n1, n2, n3) => `+7 (${code}) ${n1}-${n2}-${n3}`)))
     setContact(con)
   }, [contacts])
-
-
   return (
     <>
       <Head>
@@ -99,20 +100,28 @@ const Home = ({
                  tel={phones} buttons={buttons} nav={navigation} />
       </div>
       <Problems data={servicesCards} heading={services.fields.heading!} />
-      {/*<Question title={`Есть вопросы? \nНапишите нам!`} />*/}
+      <Question
+        data={feedback[0]}
+        action={feedback[0].fields.block!}
+        title={feedback[0].fields.title!} />
       <Partner data={banks} />
 
       <div id='services'>
         <Services data={service} />
       </div>
 
-      {/*<Question*/}
-      {/*  title={'Оставьте заявку сейчас и мы подберем лучшие условия по ипотеке!'} />*/}
+      <Question
+        data={feedback[1]}
+        action={feedback[1].fields.block!}
+        title={feedback[1].fields.title!} />
+
       <div className='container'>
         <Review data={review} />
       </div>
-      {/*<Question*/}
-      {/*  title={'Вы можете оставить здесь свой отзыв'} />*/}
+      <Question
+        data={feedback[2]}
+        action={feedback[2].fields.block!}
+        title={feedback[2].fields.title!} />
 
       <div id='about'>
         <Comands data={comands} />
@@ -144,11 +153,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const [navigation] = await loadHomeNav().then(data => data.items)
   const [mapLoc] = await loadMap().then(data => data.items)
   const review = await loadReview().then(data => data.items)
+  const feedback = await loadFeedback().then(data => data.items)
 
 
   return {
     props: {
       home: homeItem,
+      feedback,
       review,
       comands,
       mapLoc,
@@ -160,7 +171,7 @@ export const getStaticProps: GetStaticProps = async () => {
       contacts,
       navigation,
     },
-    revalidate: 300
+    revalidate: 300,
   }
 }
 

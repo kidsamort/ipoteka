@@ -14,7 +14,8 @@ type ContentType =
   | G.IService
   | G.IComands
   | G.IMap
-  | G.IReview;
+  | G.IReview
+  | G.IFeedback;
 
 
 type ContentEntry<ID extends G.CONTENT_TYPE> = Pick<ContentType, 'fields'> & {

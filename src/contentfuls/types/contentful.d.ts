@@ -87,6 +87,49 @@ export interface IContacts extends Entry<IContactsFields> {
   }
 }
 
+export interface IFeedbackFields {
+  /** Блок */
+  block?: string | undefined
+
+  /** Заголовок */
+  title?: string | undefined
+
+  /** Поле ввода */
+  inputText?: string | undefined
+
+  /** Поле Имя */
+  inputName?: string | undefined
+
+  /** Поле Телефон */
+  InputTel?: string | undefined
+
+  /** Лицензионное соглашение */
+  license?: Document | undefined
+
+  /** Кнопка */
+  buttons?: string | undefined
+
+  /** Фото */
+  image?: Asset | undefined
+}
+
+export interface IFeedback extends Entry<IFeedbackFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'Feedback'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
 export interface IFooterFields {
   /** Заголовок */
   title?: string | undefined
@@ -167,6 +210,50 @@ export interface IHomeButton extends Entry<IHomeButtonFields> {
     contentType: {
       sys: {
         id: 'homeButton'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export interface IInfoFields {
+  /** Заголовок */
+  title?: string | undefined
+
+  /** Текст */
+  text?: Document | undefined
+}
+
+export interface IInfo extends Entry<IInfoFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'info'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export interface IInformationFields {}
+
+export interface IInformation extends Entry<IInformationFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'information'
         linkType: 'ContentType'
         type: 'Link'
       }
@@ -359,9 +446,12 @@ export type CONTENT_TYPE =
   | 'bank'
   | 'comands'
   | 'contacts'
+  | 'Feedback'
   | 'footer'
   | 'home'
   | 'homeButton'
+  | 'info'
+  | 'information'
   | 'map'
   | 'nav'
   | 'partner'
