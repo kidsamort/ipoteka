@@ -19,7 +19,7 @@ const Question = ({ data, title, action }: QuestionProps): JSX.Element => {
   const [buttonText, setButtonText] = useState('')
 
   async function sendMessage() {
-    if (privacy === true) {
+    if (privacy) {
       setSucces(true)
       setErrLicense(false)
       setButtonText('Идет отправка...')
@@ -80,12 +80,14 @@ const Question = ({ data, title, action }: QuestionProps): JSX.Element => {
                    className={styles.confirmCheckbox} type='checkbox' />
 
             <div
-              className={styles.confirmText}>{documentToReactComponents(data.fields.license!)}</div>
+              className={styles.confirmText}>{documentToReactComponents(data.fields.license!)}
+              {errLicense ?
+                <p style={{ color: 'red' }}>Пожалуйста подтвердите
+                  условия</p> : <></>}
+            </div>
 
           </div>
-          {errLicense ?
-            <p style={{ color: 'red' }}>Пожалуйста подтвердите
-              условия</p> : <></>}
+
           <Button
             onClick={sendMessage}>{succes ? buttonText : data.fields.buttons!}</Button>
 
