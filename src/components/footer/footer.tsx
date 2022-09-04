@@ -38,12 +38,16 @@ const information = [
     url: '/privacy',
   },
   {
+    title: ' ИП: Пивоварова Анна Сергеевна',
+    url: '#footer',
+  },
+  {
     title: ' ИНН: 503113605694',
-    url: '',
+    url: '#footer',
   },
   {
     title: 'ОГРНИП: 322508100419700',
-    url: '',
+    url: '#footer',
   },
 ]
 

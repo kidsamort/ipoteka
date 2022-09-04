@@ -135,8 +135,9 @@ const Home = ({
 
 
       <Maps loc={mapLoc.fields.once?.split(',')!} />
-
-      <Footer />
+      <div id='footer'>
+        <Footer />
+      </div>
     </>
   )
 }
